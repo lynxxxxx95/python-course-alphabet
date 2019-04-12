@@ -33,14 +33,21 @@ def variant_with_loop(data):
         sum_age += member.get('age', 0)
     return sum_age
 
+def get_key_from_dict(some_dict):
+    return some_dict.get("age")
 
 def with_lambda(data):
-    return sum(map(lambda x: x.get('age'), data))
+    return sum(map(get_key_from_dict, data))
 
 
-print(variant_with_loop(members))
+def our_map(function, data):
+    for d in data:
+        function(d)
+
+# print(variant_with_loop(members))
 
 print(with_lambda(members))
 
-map()
+# k = ["hello", "world"]
+
 

@@ -18,9 +18,6 @@ members = [
     {'age': 83, 'name': 'Homer'}
 ]
 print([x for x in members if x.get('age') > 49])
-
 print(list(filter(lambda x: x.get('age', 0) > 49, members)))
-
-
 
 

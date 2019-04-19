@@ -240,6 +240,6 @@ def task_16_match_all_customers_and_suppliers_by_country(cur):
     """
 
     cur.execute("SELECT c.customername, c.address, c.country customercountry, s.country suppliercountry, s.suppliername " +
-                "FROM customers c full outer join suppliers s on c.country = s.country " +
+                "FROM customers c FULL OUTER JOIN suppliers s on c.country = s.country " +
                 "ORDER BY c.country, s.country")
     return cur.fetchall()

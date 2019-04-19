@@ -76,8 +76,8 @@ def task_4_update_customer(con):
     """
 
     con.cursor().execute("""UPDATE customers
-                            SET customername = 'Johnny Depp'
-                            WHERE customerid = %s""", ('1',))
+                            SET customername = %s
+                            WHERE customerid = %s""", ('Johnny Depp', '1'))
     con.commit()
 
 

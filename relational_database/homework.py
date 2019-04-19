@@ -47,7 +47,7 @@ def task_3_list_customers_in_germany(cur) -> list:
     Returns: 11 records
     """
 
-    cur.execute("SELECT * FROM customers WHERE country = 'Germany'")
+    cur.execute("SELECT * FROM customers WHERE lower(country) = 'germany'")
     return cur.fetchall()
 
 
@@ -73,7 +73,7 @@ def task_5_delete_the_last_customer(con) -> None:
     """
 
     con.cursor().execute("DELETE FROM customers " +
-                         "WHERE customerid = (SELECT MAX(customerid) FROM customers)")
+                         "WHERE customerid = (SELECT max(customerid) FROM customers)")
 
 
 def task_6_list_all_supplier_countries(cur) -> list:

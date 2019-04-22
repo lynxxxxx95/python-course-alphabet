@@ -78,3 +78,18 @@ git pull origin python_functionality
 
 - Base examples
 
+
+
+####_build_in_methods_iterators_
+
+1) Run `cd python-course-alphabet/build_in_methods_iterators && python3 tests.py` on your linux machine
+
+**Here is an output you should get after execution both commands**
+
+```
+.............
+----------------------------------------------------------------------
+Ran 20 tests in 0.005s
+
+OK
+```

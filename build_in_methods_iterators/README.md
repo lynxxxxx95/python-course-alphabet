@@ -80,7 +80,7 @@ git pull origin python_functionality
 
 
 
-####_build_in_methods_iterators_
+#### _build_in_methods_iterators_
 
 1) Run `cd python-course-alphabet/build_in_methods_iterators && python3 tests.py` on your linux machine
 

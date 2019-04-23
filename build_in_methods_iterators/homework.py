@@ -17,11 +17,11 @@ def task_1_fix_names_start_letter(data: DT) -> DT:
         >>> [{'name': 'Alex', 'age': 26}, {'name': 'Denys', 'age': 89}]
     """
 
-    def make_title(p_dict: dict, p_key: list) -> dict:
-        if p_key in p_dict:
-            p_dict[p_key] = p_dict[p_key].title()
+    def make_title(p_dict: dict) -> dict:
+        if 'name' in p_dict:
+            p_dict['name'] = p_dict['name'].title()
         return p_dict
-    return list(map(make_title, data, ['name']*len(data)))
+    return list(map(make_title, data))
 
 
 def task_2_remove_dict_fields(data: DT, redundant_keys: List[str]) -> DT:

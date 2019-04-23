@@ -11,23 +11,21 @@ DT = List[ST]
 def task_1_fix_names_start_letter(data: DT) -> DT:
     """
     Make all `names` field in list of students to start from upper letter
-
     Examples:
         fix_names_start_letters([{'name': 'Alex', 'age': 26}, {'name': 'denys', 'age': 89}])
         >>> [{'name': 'Alex', 'age': 26}, {'name': 'Denys', 'age': 89}]
     """
-    return [{key: value.title() if isinstance(value, str) else value for key, value in dict.items()} for dict in data]
+    return [{key: value.title() if  key == 'name' else value for key, value in dict.items()} for dict in data]
 
 
 def task_2_remove_dict_fields(data: DT, redundant_keys: List[str]) -> DT:
     """given_data
     Remove from dictionaries given key value
-
     Examples:
        remove_dict_field([{'name': 'Alex', 'age': 26}, {'name': 'denys', 'age': 89}], 'age')
         >>> [{'name': 'Alex'}, {'name': 'denys'}]
     """
-    return [{key:value for key,value in dic.items() if key not in redundant_keys} for dic in data]
+    return [{key: value for key, value in dic.items() if key not in redundant_keys} for dic in data]
 
 
 def task_3_find_item_via_value(data: DT, value) -> DT:
@@ -44,16 +42,14 @@ def task_4_min_value_integers(data: List[int]) -> int:
     """
     Find and return minimum value from list
     """
-    if data:
-        return min(data)
+    return min(data, default=None)
 
 
 def task_5_min_value_strings(data: List[Union[str, int]]) -> str:
     """
     Find the longest string
     """
-    if data:
-        return min([str(item)  for item in data], key=len)
+    return min([str(item)  for item in data], default=None, key=len)
 
 
 def task_6_min_value_list_of_dicts(data: DT, key: str) -> ST:
@@ -74,7 +70,7 @@ def task_8_sum_of_ints(data: List[int]) -> int:
     """
     Find sum of all items in given list
     """
-    return sum([item for item in data])
+    return sum(data)
 
 
 def task_9_sum_characters_positions(text: str) -> int:
@@ -82,13 +78,11 @@ def task_9_sum_characters_positions(text: str) -> int:
     Please read first about ascii table.
     https://python-reference.readthedocs.io/en/latest/docs/str/ASCII.html
     You need to calculate sum of decimal value of each symbol in text
-
     Examples:
         task_9_sum_characters_positions("A")
         >>> 65
         task_9_sum_characters_positions("hello")
         >>> 532
-
     """
     return sum([ord(item) for item in text])
 
@@ -126,6 +120,6 @@ def task_10_generator_of_simple_numbers() -> Generator[int, None, None]:
 def task_11_create_list_of_random_characters() -> List[str]:
     """
     Create list of 20 elements where each element is random letter from latin alphabet
-
     """
-    return [ x for x in random.choices(string.ascii_lowercase, k=20) if x is not None ]
+    # return [ x for x in random.choices(string.ascii_lowercase, k=20) if x is not None ]
+    return random.choices(string.ascii_lowercase, k=20)

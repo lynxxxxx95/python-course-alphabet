@@ -56,7 +56,7 @@ def task_4_min_value_integers(data: List[int]) -> int:
     Find and return minimum value from list
     """
 
-    return min(data, default = None)
+    return min(data, default=None)
 
 
 def task_5_min_value_strings(data: List[Union[str, int]]) -> str:
@@ -64,7 +64,7 @@ def task_5_min_value_strings(data: List[Union[str, int]]) -> str:
     Find the shortest string
     """
 
-    return min(map(str, data), key = len, default=None)
+    return min(map(str, data), key=len, default=None)
 
 
 def task_6_min_value_list_of_dicts(data: DT, key: str) -> ST:

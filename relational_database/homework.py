@@ -135,7 +135,7 @@ def task_8_count_customers_by_city(cur):
     Args:
         cur: psycopg cursor
 
-    Returns: 69 records
+    Returns: 69 records in descending order
 
     """
 

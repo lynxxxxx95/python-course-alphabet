@@ -99,7 +99,7 @@ def task_10_generator_of_simple_numbers() -> Generator[int, None, None]:
         next(a)
         >>> 3"""
 
-    def prime_number(value):
+     def prime_number(value):
         if value == 1:
             return False
         for i in range(2, value):
@@ -107,14 +107,10 @@ def task_10_generator_of_simple_numbers() -> Generator[int, None, None]:
                 return False
         return True
 
-    counter = 1
-    flag = True
-    while flag:
-        if prime_number(counter):
-            yield counter
-        counter += 1
-        if counter > 200:
-            flag = False
+    yield 2
+    for i in range(3, 200, 2):
+        if prime_number(i):
+            yield i
 
 
 def task_11_create_list_of_random_characters() -> List[str]:

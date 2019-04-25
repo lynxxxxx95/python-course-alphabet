@@ -100,7 +100,7 @@ def task_10_generator_of_simple_numbers() -> Generator[int, None, None]:
         >>> 3"""
 
      def prime_number(value):
-        for i in range(2, value):
+        for i in range(3, value, 2):
             if value % i == 0:
                 return False
         return True

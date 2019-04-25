@@ -100,8 +100,6 @@ def task_10_generator_of_simple_numbers() -> Generator[int, None, None]:
         >>> 3"""
 
      def prime_number(value):
-        if value == 1:
-            return False
         for i in range(2, value):
             if value % i == 0:
                 return False

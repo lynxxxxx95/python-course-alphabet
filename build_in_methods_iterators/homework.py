@@ -122,17 +122,16 @@ def task_10_generator_of_simple_numbers() -> Generator[int, None, None]:
         >>> 3
     """
 
-    def is_prime(value):
-        for i in range(3, value, 2):
+    def prime_number(value):
+        for i in range(2, value):
             if value % i == 0:
                 return False
         return True
 
     yield 2
     for i in range(3, 200, 2):
-        v_out = i
-        if is_prime(v_out):
-            yield v_out
+        if prime_number(i):
+            yield i
 
 
 def task_11_create_list_of_random_characters() -> List[str]:
